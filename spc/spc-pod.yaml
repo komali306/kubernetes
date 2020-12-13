@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: spc
+spec:
+  containers: 
+    - image: learningthoughts/spc:01
+      name: spc
+      ports:
+        - containerPort: 8080
+          name: spchttp
+          protocol: TCP
