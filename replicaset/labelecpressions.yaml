@@ -1,0 +1,12 @@
+---
+selector:
+  matchLabels:
+    app: jenkins
+---
+    selector:
+        matchExpressions:
+          - {key: app, operator: In, value: ['jenkins', 'gol']} 
+---
+    selector:
+        matchExpressions:
+          - {key: ver, operator: NotIn, value: ['1.0', '2.0']}     
