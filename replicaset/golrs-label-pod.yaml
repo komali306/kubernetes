@@ -12,7 +12,7 @@ spec:
       version: "01"
   template:
     metadata:
-      label:
+      labels:
         app: gol
         version: "01"
     spec:
