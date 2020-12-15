@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podwithhostpath
+spec:
+  containers:
+    - image: learningthoughts/gameoflife:01
+      name: gol-container
+      volumeMounts:
+        - mountPath: /temporary
+          name: temporaryvolumehost
+  volumes:
+    - name: temporaryvolumehost
+      hostPath:
+        path: /temporary
+        type: Directory
