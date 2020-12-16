@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gameoflife-deployment
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: gameoflife
+      version: "1.0"
+  template:
+    metadata:
+      labels:
+        app: gameoflife
+        version: "1.0"
+    spec:
+      containers:
+        - name: gol-cont
+          image: learningthoughts/gameoflife:01
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+              

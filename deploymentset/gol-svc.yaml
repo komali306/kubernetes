@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gol-dev
+spec:
+  selector:
+    app: gameoflife
+  type: LoadBalancer
+  ports:
+    - targetPort: 8080
+      port: 80
+      
+  
